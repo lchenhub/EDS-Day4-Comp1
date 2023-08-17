@@ -137,9 +137,29 @@ df_means <- function(df) {
 ```
 
 ```{r}
+calculate_betz_windpower <- function(air_density,
+                                     rotor_radius,
+                                     wind_velocity) {
+  if(wind_velocity > 130) {
+    warning("Whoa, that's a pretty high wind speed. Are you sure?")
+  }
+  
+  if (rotor_radius < 0) {
+    stop("Rotor radius must be a postive value (meters")
+    #stop() doesn't run the function and gives this msg instead
+  }
+  
+  0.3 * air_density * pi * (rotor_radius ^ 2) * (wind_velocity ^ 3)
+
+}
+```
+
+```{r}
 df_means(df = mtcars)
 ```
 
 ```{r}
 df_means(faithful)
+
+calculate_betz_windpower(air_density = 1.2, rotor_radius = 30, wind_velocity = 1020)
 ```
