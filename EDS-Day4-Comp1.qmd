@@ -1,0 +1,100 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+## Functions
+
+Make a function that doubles a value.
+
+```{r}
+double_value <- function(my_dollars) {
+  print(2 * my_dollars)
+}
+```
+
+```{r}
+double_value(my_dollars = 10.13)
+```
+
+```{r}
+monthly_income <- c(42, 50, 61, 75, 89, 50)
+
+double_value(monthly_income)
+```
+
+Create a function that returns an awesome restaurant name given an cool animal and your favorite food.
+
+```{r}
+name_restaurant <- function(animal, food) {
+  print(paste0(animal, food))
+}
+
+name_restaurant(animal = "hawk", food = "pizza")
+```
+
+Given temperature in degrees fahrenheit, write a function that converts it to Celsius.
+
+#(32**°F** − 32) × 5/9 = 0**°C**
+
+|     |
+|-----|
+|     |
+
+```{r}
+
+convertFtoC <- function(temp_f) {
+  print((temp_f -32) * (5/9))
+}
+```
+
+```{r}
+convertFtoC(temp_f = 52)
+```
+
+Create a function that given inputs of age and hometown, returns "I am \_\_ years old, and I'm from \_\_\_."
+
+```{r}
+age_hometown <- function(age, hometown) {
+  print(paste("I am", age, "years old, and I'm from", hometown))
+}
+
+age_hometown(age= 6, hometown = "Los Angeles")
+```
+
+# Functions with conditionals
+
+```{r}
+calculate_animal_age <- function(species, age_human_years) {
+  if(species == "dog") {
+    age_human_years * 7
+  } else if (species == "goat") {
+    age_human_years * 4.7
+  } else {
+    print("Please enter dog or goat.")
+  }
+}
+```
+
+```{r}
+calculate_animal_age(species = "dog", age_human_years = 10)
+
+calculate_animal_age(species = "whale", age_human_years = 4)
+```
+
+Write a function that, given temperature in Kelvin, if a user selects "metric" to the scale then return degrees Celsius, or if they select "english" then return degrees in Fahrenheit.
+
+```{r}
+convert_kelvin <- function(scale, temp_k) {
+  if(scale == "metric") {
+    temp_k - 273.15
+  } else if (scale == "english") {
+    ((temp_k - 273.15) * 1.8) + 32
+  }
+}
+```
+
+```{r}
+my_value <- convert_kelvin(scale = "metric", temp_k = 40)
+```
