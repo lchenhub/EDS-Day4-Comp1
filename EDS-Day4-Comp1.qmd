@@ -84,3 +84,17 @@ calculate_animal_age(species = "whale", age_human_years = 4)
 ```
 
 Write a function that, given temperature in Kelvin, if a user selects "metric" to the scale then return degrees Celsius, or if they select "english" then return degrees in Fahrenheit.
+
+```{r}
+convert_kelvin <- function(scale, temp_k) {
+  if(scale == "metric") {
+    temp_k - 273.15
+  } else if (scale == "english") {
+    ((temp_k - 273.15) * 1.8) + 32
+  }
+}
+```
+
+```{r}
+my_value <- convert_kelvin(scale = "metric", temp_k = 40)
+```
