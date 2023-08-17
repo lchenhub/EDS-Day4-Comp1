@@ -1,0 +1,7 @@
+"0","convert_kelvin <- function(scale, temp_k) {"
+"0","  if(scale == ""metric"") {"
+"0","    temp_k - 273.15"
+"0","  } else if (scale == ""english"") {"
+"0","    ((temp_k - 273.15) * 1.8) + 32"
+"0","  }"
+"0","}"
